@@ -323,12 +323,23 @@ def main() -> int:
                 print(f"python execution time: {python_time_sec:.3f} sec")
 
                 output_dir_path = work_dir / output_dir_name
+                
+                t_cplex_start = time.perf_counter()
                 cplex_time_sec = sum_cplex_time_in_output_dir(output_dir_path)
+                t_cplex_end = time.perf_counter()
+                cplex_read_time = t_cplex_end - t_cplex_start
+                
                 exclude_log_name = f"{args.network}.log"
+                t_lmax_start = time.perf_counter()
                 lmax_sum = sum_lmax_in_output_dir(output_dir_path, exclude_log_name=exclude_log_name)
+                t_lmax_end = time.perf_counter()
+                lmax_read_time = t_lmax_end - t_lmax_start
+                
                 inspection_time_sec = lmax_sum / 200_000
                 total_time_sec = python_time_sec + cplex_time_sec + inspection_time_sec
                 print(f"cplex execution time sum: {cplex_time_sec:.3f} sec")
+                print(f"cplex log read time: {cplex_read_time:.3f} sec")
+                print(f"lmax log read time: {lmax_read_time:.3f} sec")
                 print(f"inspection time sum: {inspection_time_sec:.6f} sec")
                 print(f"total time: {total_time_sec:.3f} sec")
 
