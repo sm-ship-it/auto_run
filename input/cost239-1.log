@@ -1,0 +1,215 @@
+========== GLPK: generate LP ==========
+model: uiwn_2_md.mod
+data : input/cost239-1.dat
+tmp LP: cost239-1_multiobj.lp.glpk.tmp
+
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --model uiwn_2_md.mod --data input/cost239-1.dat --check --wlp cost239-1_multiobj.lp.glpk.tmp
+Reading model section from uiwn_2_md.mod...
+80 lines were read
+Reading data section from input/cost239-1.dat...
+input/cost239-1.dat:74: warning: final NL missing before end of file
+74 lines were read
+Generating MIN_LENGTH...
+Generating or_constraint1...
+Generating or_constraint2...
+Generating or_constraint3...
+Generating ST1...
+Generating ST2...
+Generating ST3...
+Generating ST4...
+Generating FlowNonDepot_ub...
+Generating FlowNonDepot_lb...
+Generating ST402...
+Generating ST5...
+Generating ST6...
+Generating ST7...
+Generating ST8...
+Model has been successfully generated
+glp_mpl_build_prob: row MIN_LENGTH; constant term -26 ignored
+Writing problem data to 'cost239-1_multiobj.lp.glpk.tmp'...
+2069 lines were written
+--- Problem Characteristics ---
+Number of rows               =      884
+Number of columns            =      538
+Number of non-zeros (matrix) =     3546
+Number of non-zeros (objrow) =      156
+
+========== multi-objective LP created ==========
+created LP: cost239-1_multiobj.lp
+T = 3
+|E| = 52
+OBJ1 terms = 156
+
+========== CPLEX: optimize ==========
+read LP: cost239-1_multiobj.lp
+
+
+Welcome to IBM(R) ILOG(R) CPLEX(R) Interactive Optimizer 22.1.2.0
+  with Simplex, Mixed Integer & Barrier Optimizers
+5725-A06 5725-A29 5724-Y48 5724-Y49 5724-Y54 5724-Y55 5655-Y21
+Copyright IBM Corp. 1988, 2024.  All Rights Reserved.
+
+Type 'help' for a list of available commands.
+Type 'help' followed by a command name for more
+information on commands.
+
+CPLEX> Logfile 'cplex.log' closed.
+Logfile 'input/cost239-1.log.cplex.tmp' open.
+CPLEX> New value for control the creation of clone log files: -1
+CPLEX> Problem 'cost239-1_multiobj.lp' read.
+Read time = 0.01 sec. (0.09 ticks)
+CPLEX> Version identifier: 22.1.2.0 | 2024-11-26 | 0edbb82fd
+CPXPARAM_Output_CloneLog                         -1
+
+Multi-objective solve log . . .
+
+Index  Priority  Blend          Objective      Nodes  Time (sec.)  DetTime (ticks)
+    1         2      1   2.6000000000e+01          0         0.71           180.18
+    2         1      1   4.2610000000e+03     529037       712.56        361088.83
+
+Multi-objective optimal
+Solution time =  713.38 sec.  Iterations = 74048617  Nodes = 529037
+Deterministic time = 361269.08 ticks  (506.42 ticks/sec)
+
+CPLEX> Incumbent solution
+Variable Name           Solution Value
+x_or(1,2,1)                   1.000000
+x_or(1,5,1)                   1.000000
+x_or(1,6,1)                   1.000000
+x_or(1,7,2)                   1.000000
+x_or(1,9,1)                   1.000000
+x_or(1,11,2)                  1.000000
+x_or(2,1,1)                   1.000000
+x_or(2,3,1)                   1.000000
+x_or(2,5,3)                   1.000000
+x_or(2,8,3)                   1.000000
+x_or(3,2,1)                   1.000000
+x_or(3,5,3)                   1.000000
+x_or(3,6,2)                   1.000000
+x_or(3,7,1)                   1.000000
+x_or(3,8,2)                   1.000000
+x_or(4,6,2)                   1.000000
+x_or(4,7,3)                   1.000000
+x_or(4,8,3)                   1.000000
+x_or(4,9,3)                   1.000000
+x_or(4,10,2)                  1.000000
+x_or(5,1,1)                   1.000000
+x_or(5,2,3)                   1.000000
+x_or(5,3,3)                   1.000000
+x_or(5,6,1)                   1.000000
+x_or(5,11,3)                  1.000000
+x_or(6,1,1)                   1.000000
+x_or(6,3,2)                   1.000000
+x_or(6,4,2)                   1.000000
+x_or(6,5,1)                   1.000000
+x_or(6,9,1)                   1.000000
+x_or(7,1,2)                   1.000000
+x_or(7,3,1)                   1.000000
+x_or(7,4,3)                   1.000000
+x_or(7,8,2)                   1.000000
+x_or(7,10,1)                  1.000000
+x_or(8,2,3)                   1.000000
+x_or(8,3,2)                   1.000000
+x_or(8,4,3)                   1.000000
+x_or(8,7,2)                   1.000000
+x_or(9,1,1)                   1.000000
+x_or(9,4,3)                   1.000000
+x_or(9,6,1)                   1.000000
+x_or(9,10,1)                  1.000000
+x_or(9,11,3)                  1.000000
+x_or(10,4,2)                  1.000000
+x_or(10,7,1)                  1.000000
+x_or(10,9,1)                  1.000000
+x_or(10,11,2)                 1.000000
+x_or(11,1,2)                  1.000000
+x_or(11,5,3)                  1.000000
+x_or(11,9,3)                  1.000000
+x_or(11,10,2)                 1.000000
+Lmax                       4261.000000
+x(1,2,1)                      1.000000
+x(1,5,1)                      1.000000
+x(1,7,2)                      1.000000
+x(2,3,1)                      1.000000
+x(2,8,3)                      1.000000
+x(3,5,3)                      1.000000
+x(3,6,2)                      1.000000
+x(3,7,1)                      1.000000
+x(4,7,3)                      1.000000
+x(4,9,3)                      1.000000
+x(4,10,2)                     1.000000
+x(5,2,3)                      1.000000
+x(5,3,3)                      1.000000
+x(5,6,1)                      1.000000
+x(6,1,1)                      1.000000
+x(6,4,2)                      1.000000
+x(6,9,1)                      1.000000
+x(7,4,3)                      1.000000
+x(7,8,2)                      1.000000
+x(7,10,1)                     1.000000
+x(8,3,2)                      1.000000
+x(8,4,3)                      1.000000
+x(9,1,1)                      1.000000
+x(9,6,1)                      1.000000
+x(9,11,3)                     1.000000
+x(10,9,1)                     1.000000
+x(10,11,2)                    1.000000
+x(11,1,2)                     1.000000
+x(11,5,3)                     1.000000
+DP(1,1)                       1.000000
+DP(1,2)                       1.000000
+DP(11,3)                      1.000000
+b(1,1)                        1.000000
+b(1,2)                        1.000000
+b(2,1)                        1.000000
+b(2,3)                        1.000000
+b(3,1)                        1.000000
+b(3,2)                        1.000000
+b(3,3)                        1.000000
+b(4,2)                        1.000000
+b(4,3)                        1.000000
+b(5,1)                        1.000000
+b(5,3)                        1.000000
+b(6,1)                        1.000000
+b(6,2)                        1.000000
+b(7,1)                        1.000000
+b(7,2)                        1.000000
+b(7,3)                        1.000000
+b(8,2)                        1.000000
+b(8,3)                        1.000000
+b(9,1)                        1.000000
+b(9,3)                        1.000000
+b(10,1)                       1.000000
+b(10,2)                       1.000000
+b(11,2)                       1.000000
+b(11,3)                       1.000000
+y(1,2,1)                      4.000000
+y(1,5,1)                      3.000000
+y(1,7,2)                      7.000000
+y(2,3,1)                      3.000000
+y(5,2,3)                      5.000000
+y(2,8,3)                      4.000000
+y(3,7,1)                      2.000000
+y(8,3,2)                      5.000000
+y(3,6,2)                      4.000000
+y(5,3,3)                      1.000000
+y(6,4,2)                      3.000000
+y(4,10,2)                     2.000000
+y(8,4,3)                      3.000000
+y(4,7,3)                      1.000000
+y(4,9,3)                      1.000000
+y(5,6,1)                      2.000000
+y(11,5,3)                     7.000000
+y(6,9,1)                      1.000000
+y(7,10,1)                     1.000000
+y(7,8,2)                      6.000000
+y(10,11,2)                    1.000000
+L(1)                       4257.000000
+L(2)                       4261.000000
+L(3)                       4261.000000
+All other variables in the range 1-538 are 0.
+CPLEX> 
+finished
+LP : cost239-1_multiobj.lp
+LOG: input/cost239-1.log
